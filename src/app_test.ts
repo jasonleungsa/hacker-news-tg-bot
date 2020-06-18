@@ -1,5 +1,12 @@
 import app from "./app.ts";
-import { it, superoak, readJsonSync, nock, NockRequests, delay } from "./test_deps.ts";
+import {
+  it,
+  superoak,
+  readJsonSync,
+  nock,
+  NockRequests,
+  delay,
+} from "./test_deps.ts";
 import { HackerNewsStory } from "./services/types.ts";
 
 const hackerNewsFixture = readJsonSync(
@@ -69,5 +76,5 @@ it("should handle /news command", async () => {
     })
     .expect({});
 
-  await delay(1)
+  await delay(1);
 });
