@@ -1,0 +1,31 @@
+{
+  "$schema": "https://deno.land/x/denon/schema.json",
+  "watch": false,
+  "scripts": {
+    "start": {
+      "cmd": "deno run ./src/app.ts",
+      "allow": [
+        "env",
+        "net"
+      ],
+      "watch": true
+    },
+    "start:tunnel": {
+      "cmd": "ssh -R 80:localhost:3000 hn-tg-bot-deno@ssh.localhost.run"
+    },
+    "test": {
+      "cmd": "deno test",
+      "allow": [
+        "env",
+        "net",
+        "read"
+      ],
+      "env": {
+        "TELEGRAM_API_KEY": "123"
+      }
+    },
+    "build": {
+      "cmd": "./scripts/build.sh"
+    }
+  }
+}
